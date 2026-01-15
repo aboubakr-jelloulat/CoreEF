@@ -1,0 +1,6 @@
+@CoreEF_HostAddress = http://localhost:5127
+
+GET {{CoreEF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
