@@ -1,5 +1,7 @@
+using CoreEF.Modules;
 using Microsoft.EntityFrameworkCore;
 
+namespace CoreEF.Data;
 
 /*
     db context in c# is a session with the database 
@@ -21,11 +23,11 @@ using Microsoft.EntityFrameworkCore;
         dotnet ef database update
 
 */
-internal class AppDbContext : DbContext // primary constractor  as in the c# discution 
+public class AppDbContext : DbContext
 {
 
     public DbSet<FishingCompany>    FishingCompanies {get; set;}
-    public DbSet<FishingTrip>       FishingTrips {get; set;} 
+
     public DbSet<FishingVessel>     FishingVessels {get; set;}
     
 
@@ -34,15 +36,6 @@ internal class AppDbContext : DbContext // primary constractor  as in the c# dis
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
-
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
-
-
-
-    }
-
 
     
 }

@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-internal class FishingCompany
+namespace CoreEF.Modules;
+
+public class FishingCompany
 {
     [Key]
     public int Id { get; set; }
@@ -19,4 +21,3 @@ internal class FishingCompany
     [Required]
     public string Country { get; set; } = null!;
 }
-

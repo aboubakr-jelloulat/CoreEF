@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-internal class FishingVessel
+namespace CoreEF.Modules;
+
+public class FishingVessel
 {
     [Key]
     public int Id { get; set; }
@@ -15,8 +17,5 @@ internal class FishingVessel
     [ForeignKey("FishingCompanyId")]
     public int FishingCompanyId { get; set; }
 
-    [Required]
-    public ICollection<FishingTrip> FishingTrips { get; set; } = null!;
-
-
+   
 }
